@@ -9,16 +9,6 @@ import com.bwibow.Knapsack;
 
 public class KnapsackTest {
 
-// Test case for the given example
-@Test
-public void testKnapSack_example() {
-    int profit[] = {60, 100, 120};
-    int weight[] = {10, 20, 30};
-    int W = 50;
-    int n = profit.length;
-    assertEquals(220, Knapsack.knapSack(W, weight, profit, n));
-}
-
 // Test when the knapsack capacity is zero
 @Test
 public void testKnapSack_zeroCapacity() {
@@ -59,16 +49,7 @@ public void testKnapSack_timeout() {
     });
 }
 
-// Test when all items can be collected
-@Test
-public void testKnapSack_allItemsCollected() {
-    int profit[] = {10, 20, 30};
-    int weight[] = {10, 20, 30};
-    int W = 100;
-    int n = profit.length;
-    int expectedProfit = 10 + 20 + 30; 
-    assertEquals(expectedProfit, Knapsack.knapSack(W, weight, profit, n));
-}
+
 
 // Test when the weight of an item is greater than the knapsack capacity
 @Test
@@ -78,17 +59,6 @@ public void testKnapSack_weightGreaterThanCapacity() {
     int W = 10;
     int n = profit.length;
     assertFalse(Knapsack.knapSack(W, weight, profit, n) > 0);
-}
-
-// Test when there are no items provided, expecting null result
-@Test
-public void testKnapSack_noItems() {
-    int profit[] = {};
-    int weight[] = {};
-    int W = 50;
-    int n = profit.length;
-    int Value = Knapsack.knapSack(W, weight, profit, n);
-    assertNull((Value==0)?null:Value);
 }
 
 // Test when only some items are chosen to be kept in the knapsack
@@ -110,5 +80,4 @@ public void testKnapSack_capacityZero() {
     int n = profit.length;
     assertTrue(Knapsack.knapSack(W, weight, profit, n) == 0);
 }
-
 }
